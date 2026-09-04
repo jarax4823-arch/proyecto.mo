@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Roses</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">
+                <i data-lucide="rose"></i>
+            </div>
+            <span>Mountain Roses</span>
+        </div>
+
+        <nav class="navigation">
+            <a href="#" class="nav-item active">
+                <i data-lucide="house" class="nav-icon"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="layout-grid" class="nav-icon"></i>
+                <span>Plataformas</span> 
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="wrench" class="nav-icon"></i>
+                <span>Herramientas</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="file-text" class="nav-icon"></i>
+                <span>Informes</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="book-open" class="nav-icon"></i>
+                <span>Documentación</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="circle-help" class="nav-icon"></i>
+                <span>Soporte</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="categories">
+            <p class="category-title">CATEGORÍAS</p>
+
+            <button class="category-item active">
+                <i data-lucide="layout-grid" class="category-icon"></i>
+                <span>Todas</span>
+                <span class="category-number">19</span>
+            </button>
+            <button class="category-item">
+                <i data-lucide="briefcase-business" class="category-icon"></i>
+                <span>Administración</span>
+                <span class="category-number">5</span>
+            </button>
+            <button class="category-item">
+                <i data-lucide="sprout" class="category-icon"></i>
+                <span>Cultivo</span>
+                <span class="category-number">4</span>
+            </button>
+            <button class="category-item">
+                <i data-lucide="settings-2" class="category-icon"></i>
+                <span>Operaciones</span>
+                <span class="category-number">6</span>
+            </button>
+            <button class="category-item">
+                <i data-lucide="monitor-cog" class="category-icon"></i>
+                <span>Tecnología</span>
+                <span class="category-number">4</span>
+            </button>
+        </div>
+
+        <div class="support-box">
+            <h3>¿Necesitas ayuda?</h3>
+            <p>Nuestro equipo de soporte está para ayudarte.</p>
+            <a href="#">Contactar soporte</a>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+        
+        <!-- HEADER SUPERIOR -->
+        <header class="top-header">
+            <div class="search-bar">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" placeholder="Buscar plataformas, herramientas...">
+            </div>
+
+            <div class="user-profile">
+                <button class="notification-btn" aria-label="Notificaciones">
+                    <i data-lucide="bell"></i>
+                    <span class="badge">2</span>
+                </button>
+
+                <div class="profile-info">
+                    <div class="avatar">
+                        <i data-lucide="rose"></i>
+                    </div>
+                    <span class="user-name">Supervisor</span>
+                    <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1. BANNER PRINCIPAL (CARROUSEL) -->
+        <section class="hero-banner">
+            <div class="slides-container">
+                <!-- imagen 1 -->
+                <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('assets/images/imagen1.png');">
+                    <div class="banner-content">
+                        <span class="banner-tag">Bienvenido a</span>
+                        <h1 class="banner-title">Mountain Roses</h1>
+                        <p class="banner-description">Portal corporativo de acceso a plataformas, herramientas e informes empresariales.</p>
+                        <button class="btn-primary">
+                            <span>Explorar plataformas</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- imagen 2 -->
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('assets/images/imagen2.png');">
+                    <div class="banner-content">
+                        <span class="banner-tag">Módulo de Cultivo</span>
+                        <h1 class="banner-title">Rendimientos e Informes</h1>
+                        <p class="banner-description">Monitoreo en tiempo real de lotes y métricas de producción.</p>
+                        <button class="btn-primary">
+                            <span>Ver rendimientos</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PUNTOS NAVEGACION -->
+            <div class="dots-container">
+                <button class="dot active" onclick="changeSlide(0)"></button>
+                <button class="dot" onclick="changeSlide(1)"></button>
+            </div>
+        </section>
+
+        <!-- 2. ACCESOS RÁPIDOS -->
+        <section class="section-container">
+            <h2 class="section-title">Accesos Rápidos</h2>
+
+            <div class="quick-access-grid">
+                <div class="quick-card">
+                    <div class="card-icon"><i data-lucide="sprout"></i></div>
+                    <div class="card-info">
+                        <h3>Conteo de Tallos</h3>
+                        <p>Registrar conteo</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow-icon"></i>
+                </div>
+
+                <div class="quick-card">
+                    <div class="card-icon"><i data-lucide="trending-up"></i></div>
+                    <div class="card-info">
+                        <h3>Rendimientos Cultivo</h3>
+                        <p>Ver rendimientos</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow-icon"></i>
+                </div>
+
+                <div class="quick-card">
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <div class="card-info">
+                        <h3>Rep. Calificado Interno</h3>
+                        <p>Evaluaciones</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow-icon"></i>
+                </div>
+
+                <div class="quick-card">
+                    <div class="card-icon"><i data-lucide="clipboard-check"></i></div> 
+                    <div class="card-info">
+                        <h3>Check List - Disp. Móviles</h3> 
+                        <p>Verificar dispositivos</p> 
+                    </div>
+                    <i data-lucide="chevron-right" class="arrow-icon"></i> 
+                </div>
+            </div>
+        </section>
+
+               <!-- 3. PLATAFORMAS EMPRESARIALES -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Plataformas Empresariales</h2>
+                <div class="filter-tabs"> 
+                    <button class="tab-btn active">Todas</button>
+                    <button class="tab-btn">Administración</button>
+                    <button class="tab-btn">Cultivo</button>
+                    <button class="tab-btn">Operaciones</button>
+                    <button class="tab-btn">Tecnología</button>
+                </div>
+                <a href="#" class="see-all">Ver todas <i data-lucide="chevron-right"></i></a>
+            </div>
+
+            <div class="platforms-grid">
+                <!-- Fila 1 -->
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/afinia.png" alt="Afinia">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Afinia</h3>
+                        <p>Administración</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Operaciones">
+                    <div class="platform-logo">
+                        <img src="assets/images/am.png" alt="AM">
+                    </div>
+                    <div class="platform-info">
+                        <h3>AM</h3>
+                        <p>Mantenimiento</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/biofile.png" alt="Biofile">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Biofile</h3>
+                        <p>Administración</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/Contratos GHT.png" alt="Contratos GHT">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Contratos GHT</h3>
+                        <p>Gestión</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Operaciones">
+                    <div class="platform-logo">
+                        <img src="assets/images/iauditor.png" alt="iAuditor">
+                    </div>
+                    <div class="platform-info">
+                        <h3>iAuditor</h3>
+                        <p>Operaciones</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Tecnología">
+                    <div class="platform-logo">
+                        <img src="assets/images/kissflow.png" alt="Kissflow">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Kissflow</h3>
+                        <p>Tecnología</p>
+                    </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="platform-card" data-category="Operaciones">
+                    <div class="platform-logo">
+                        <img src="assets/images/logistica.png" alt="Logística de Entrega">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Logística de Entrega</h3>
+                        <p>Operaciones</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Tecnología">
+                    <div class="platform-logo">
+                        <img src="assets/images/Looker Studio.png" alt="Looker Studio">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Looker Studio</h3>
+                        <p>Tecnología</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Tecnología">
+                    <div class="platform-logo">
+                        <img src="assets/images/mantis.png" alt="Mantis Bug Tracker">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Mantis Bug Tracker</h3>
+                        <p>Tecnología</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/Portal de ABI.png" alt="Portal de ABI">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Portal de ABI</h3>
+                        <p>Administración</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/Portal SD.png" alt="Portal SD">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Portal SD</h3>
+                        <p>Administración</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/prophix.png" alt="Prophix">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Prophix</h3>
+                        <p>Administración</p>
+                    </div>
+                </div>
+
+                <!-- Fila 3 -->
+                <div class="platform-card" data-category="Administración">
+                    <div class="platform-logo">
+                        <img src="assets/images/SAG Web.png" alt="SAG Web">
+                    </div>
+                    <div class="platform-info">
+                        <h3>SAG Web</h3>
+                        <p>Administración</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Tecnología">
+                    <div class="platform-logo">
+                        <img src="assets/images/sharepoint.png" alt="SharePoint MO">
+                    </div>
+                    <div class="platform-info">
+                        <h3>SharePoint MO</h3>
+                        <p>Tecnología</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Operaciones">
+                    <div class="platform-logo">
+                        <img src="assets/images/sot.png" alt="SOT">
+                    </div>
+                    <div class="platform-info">
+                        <h3>SOT</h3>
+                        <p>Mantenimiento</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Cultivo">
+                    <div class="platform-logo">
+                        <img src="assets/images/Verdad Única.png" alt="Verdad Única">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Verdad Única</h3>
+                        <p>Cultivo</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Cultivo">
+                    <div class="platform-logo">
+                        <img src="assets/images/WebFlowers MO.png" alt="WebFlowers MO">
+                    </div>
+                    <div class="platform-info">
+                        <h3>WebFlowers MO</h3>
+                        <p>Cultivo</p>
+                    </div>
+                </div>
+
+                <div class="platform-card" data-category="Cultivo">
+                    <div class="platform-logo">
+                        <img src="assets/images/wiga.png" alt="Wiga">
+                    </div>
+                    <div class="platform-info">
+                        <h3>Wiga</h3>
+                        <p>Cultivo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Inicializar los íconos
+      lucide.createIcons();
+    </script>
+</body>
+</html>

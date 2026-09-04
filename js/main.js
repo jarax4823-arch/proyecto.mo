@@ -1,0 +1,70 @@
+document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+
+    const platformUrls = {
+        'Afinia': 'https://auth.safetyculture.com/login?state=hKFo2SBqWHdOZUdxQ3NEWi1GYW5oZlBCV054NHdzRWJuaUVLa6FupWxvZ2luo3RpZNkgYjUweElWcmFPZUw0bEhLLTRQRWMtaDZJWHNNQU5EQ0ujY2lk2SBpVGh3ZWRFaVZXMGdkcVc2czZ3d2ZJeXVPQVJWeXNQSQ&client=iThwedEiVW0gdqW6s6wwfIyuOARVysPI&protocol=oauth2&iss=https%3A%2F%2Fauth.safetyculture.com%2F&nonce=WiGDDdSzKi7-RYez&redirect_uri=https%3A%2F%2Fapp.safetyculture.com%2Fauth-callback&response_type=code&sc_state=eyJ0b2tlbiI6IjQ1Y2I1YmQ2LTk3OTYtNDA4MC04ZDFmLTE0NGE0ZDE4NjM5OCIsImNsaWVudElEIjoiaVRod2VkRWlWVzBnZHFXNnM2d3dmSXl1T0FSVnlzUEkiLCJkZXN0aW5hdGlvblVSSSI6Ii8iLCJxdWVyeSI6Ij9pc3M9aHR0cHMlM0ElMkYlMkZhdXRoLnNhZmV0eWN1bHR1cmUuY29tJTJGIiwidGltZUlzc3VlZCI6IjIwMjYtMDgtMzFUMTQ6MjY6MTQuMTMwMzc5NDE5WiJ9&scope=openid%20profile%20email&version=2',
+        'AM': 'http://10.0.61.40:8080/AM4G/src/Home/login.html',
+        'Biofile': 'https://biofile.com/login',
+        'Contratos GHT': 'https://contratos.ght.com/login',
+        'iAuditor': 'https://auth.safetyculture.com/login?state=hKFo2SBmOUNETzNNdTgzYlBvYW82ekdab0ZyWU5iLXU2ZjVsMaFupWxvZ2luo3RpZNkgazlLczVYWmc0RFFsQmEya29EZi1BeVFvY2dXbVVNajajY2lk2SBpVGh3ZWRFaVZXMGdkcVc2czZ3d2ZJeXVPQVJWeXNQSQ&client=iThwedEiVW0gdqW6s6wwfIyuOARVysPI&protocol=oauth2&iss=https%3A%2F%2Fauth.safetyculture.com%2F&nonce=kKjnLeEOEZ3SEFcN&redirect_uri=https%3A%2F%2Fapp.safetyculture.com%2Fauth-callback&response_type=code&sc_state=eyJ0b2tlbiI6ImEwM2Y0ZTBmLTFhYzMtNDIxNi05ZmE5LTFiYmYwYjkwN2Y2NyIsImNsaWVudElEIjoiaVRod2VkRWlWVzBnZHFXNnM2d3dmSXl1T0FSVnlzUEkiLCJkZXN0aW5hdGlvblVSSSI6Ii8iLCJxdWVyeSI6Ij9pc3M9aHR0cHMlM0ElMkYlMkZhdXRoLnNhZmV0eWN1bHR1cmUuY29tJTJGIiwidGltZUlzc3VlZCI6IjIwMjYtMDgtMzFUMTQ6Mjg6NDkuMTY5NjcwMzUzWiJ9&scope=openid%20profile%20email&version=2',
+        'Kissflow': 'https://ght.kissflow.com/view/login',
+        'Logística de Entrega': 'https://logistica.mountainroses.com/login',
+        'Looker Studio': 'https://lookerstudio.google.com',
+        'Mantis Bug Tracker': 'https://mantis.ghtcorp.com/login_page.php?return=%2Fview_all_bug_page.php',
+        'Portal de ABI': 'https://portal.abi.com.ar',
+        'Portal SD': 'https://portalsdght.azurewebsites.net/',
+        'Prophix': 'https://ghtcorp.us1.prophix.cloud/sso/Account/Login?ReturnUrl=%2Fsso%2F%3FreturnURL%3D%252f',
+        'SAG Web': 'http://sagweb.ghtcorp.com:8081/Home/Index',
+        'SharePoint MO': 'https://login.microsoftonline.com/510f9de0-9615-4a97-8ffa-0354dd6cd6c7/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQU9OampSTzJUQzhDWWQvckpVa2Yya0w5djdTbTNBZXkxUVdTVmgvaytwOXV4TjJoVWNSYXBma1o0b2VucHcybVJLaTFnR203Q2JnWWJWZ2xiUHFkT3hydzZjbXBJMGxtT3NGRGFpc0N4QkVNbDN4Ynpld3FFOVBBSlVJWW5udG9aUUFBQUJoRkFLMGdDVmpUbXd0MjNHWDF4cElaTHhWVlVWR1dvOTA9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1PTmpqUk8yVEM4Q1lkL3JKVWtmMmtMOXY3U20zQWV5MVFXU1ZoL2srcDl1eE4yaFVjUmFwZmtaNG9lbnB3Mm1SQT09IiwieSI6IkFBQUFNS2kxZ0dtN0NiZ1liVmdsYlBxZE94cnc2Y21wSTBsbU9zRkRhaXNDeEJFTWwzeGJ6ZXdxRTlQQUpVSVlubnRvWlE9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=5C02933DA5E8AA5321F0F81D9956E119C10ED1FE6E9A3E19%2D6D64F3BF763B02957D8F742ED95E6830AA93D86C3FADD03635936F0CADC6D2AC&redirect%5Furi=https%3A%2F%2Fgrchia%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTHlZUUFBQUJRNzI4MlFkU1lLamZBU0pYSiUyRmI4aVo4VzV2aGhRdnZHSXIlMkYxdERzU0tEVnBxSHhxRUh1d1ZPODV6UFB2WDRmd2olMkZLUXozcSUyQmwyOVhUUUZKbGlrOW1MWlpkTlpSWHpjVWJ5bEZZR3FtNUZtVEs1MGJNYkIlMkZ0S0p0YzR1TFlDJTJCa0Y3ZEZja0xhJTJCYXpRb1VVVXJIYU03WEJHalB3NmxqUWZ4czRzQ1NSWWEzRVpFJTJGV3A2SHZ3TWFmM2ZpbENWQjFSbHd4ekU4S3dVMU1wbUdMS1ZkU3ElMkZJYW4zSTFkb2g5bUFwQVFVNjNMMFQ5NHlDeHhJclElMkJTem1mOUtTZlhhWEoyNDlTMjBxMmpSc09wZjJVZmxxTkZ4d1NyMzNQbXdVZ0hJcG9zeDY4OWE2NiUyRjBWck1JaFh5YThHalhPaWZuTmZIVVk2TXJuZlVQdURWUGJZJTJGNDIlMkJvYlAxWWhGWk5XRThTdHRVUWcxT3N1VGNITXc0VWc4OXRCUGclM0QlM0Q&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=90a636a2%2Dd0d1%2Df000%2D0e9b%2D7a4ccc1b072e',
+        'SOT': 'https://docs.google.com/forms/d/e/1FAIpQLSf0QTOHeO7bTIa7oXV9VKVMYazV-MOtFpu_7f4D9kkZ8J7z7w/viewform',
+        'Verdad Única': 'https://verdadunica.ghtcorp.com/#/',
+        'WebFlowers MO': 'https://webflowersmo.azurewebsites.net/(S(showgyq1r3p1e2ecoa2mgjkx))/Default_new.aspx',
+        'Wiga': 'https://wiga.io/login'
+    };
+
+    document.querySelectorAll('.platform-card').forEach((card) => {
+        const title = card.querySelector('.platform-info h3')?.textContent.trim();
+        const url = title ? platformUrls[title] : null;
+
+        if (!url) return;
+
+        const openPlatform = (event) => {
+            event.preventDefault();
+            window.location.href = url;
+        };
+
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Abrir ${title}`);
+        card.addEventListener('click', openPlatform);
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                openPlatform(event);
+            }
+        });
+    });
+
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const autoSlideInterval = 5000;
+
+    window.changeSlide = function(index) {
+        if (!slides.length || !dots.length) return;
+
+        slides[currentSlideIndex].classList.remove('active');
+        dots[currentSlideIndex].classList.remove('active');
+
+        currentSlideIndex = index;
+
+        slides[currentSlideIndex].classList.add('active');
+        dots[currentSlideIndex].classList.add('active');
+    };
+
+    if (slides.length > 0) {
+        setInterval(() => {
+            let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
+            window.changeSlide(nextSlideIndex);
+        }, autoSlideInterval);
+    }
+});
