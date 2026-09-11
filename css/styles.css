@@ -76,6 +76,23 @@ button {
     top: 0;
     width: 250px;
     z-index: 10;
+    transition: transform 0.25s ease, width 0.25s ease, padding 0.25s ease;
+}
+
+.sidebar-collapsed {
+    overflow: visible;
+    padding-left: 0;
+    padding-right: 0;
+    transform: translateX(-250px);
+    width: 0;
+}
+
+.sidebar-collapsed .brand {
+    padding: 0;
+}
+
+.sidebar-collapsed .brand > *:not(.sidebar-toggle) {
+    display: none;
 }
 
 .brand {
@@ -113,10 +130,26 @@ button {
     background: transparent;
     border: 0;
     color: #fff;
-    display: none;
+    display: flex;
     justify-content: center;
     margin-left: auto;
     padding: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.sidebar-collapsed .sidebar-toggle {
+    background: var(--forest);
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    left: 250px;
+    padding: 9px;
+    position: fixed;
+    top: 16px;
 }
 
 .sidebar-toggle svg {
@@ -253,6 +286,11 @@ button {
     margin-left: 250px;
     min-height: 100vh;
     padding: 25px 42px 28px;
+    transition: margin-left 0.25s ease;
+}
+
+body:has(.sidebar-collapsed) .content {
+    margin-left: 0;
 }
 
 .top-header {
@@ -854,6 +892,35 @@ button {
         padding: 14px 16px;
         position: relative;
         width: 100%;
+    }
+
+    .sidebar-collapsed {
+        overflow: hidden;
+        padding: 14px 16px;
+        transform: none;
+        width: 100%;
+    }
+
+    .sidebar-collapsed .brand {
+        padding: 0;
+    }
+
+    .sidebar-collapsed .brand > *:not(.sidebar-toggle) {
+        display: flex;
+    }
+
+    .sidebar-collapsed .sidebar-toggle {
+        background: transparent;
+        border-radius: 0;
+        display: flex;
+        left: auto;
+        padding: 4px;
+        position: static;
+        top: auto;
+    }
+
+    body:has(.sidebar-collapsed) .content {
+        margin-left: 0;
     }
 
     .sidebar.mobile-open {

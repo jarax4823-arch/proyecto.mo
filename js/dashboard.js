@@ -64,7 +64,9 @@
         const sidebarToggle = document.querySelector('.sidebar-toggle');
 
         sidebarToggle?.addEventListener('click', () => {
-            const isOpen = sidebar.classList.toggle('mobile-open');
+            const isMobile = window.matchMedia('(max-width: 680px)').matches;
+            const stateClass = isMobile ? 'mobile-open' : 'sidebar-collapsed';
+            const isOpen = sidebar.classList.toggle(stateClass);
             sidebarToggle.setAttribute('aria-expanded', String(isOpen));
             sidebarToggle.setAttribute('aria-label', isOpen ? 'Cerrar navegación' : 'Abrir navegación');
         });
