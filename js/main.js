@@ -1,7 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
-
-    const platformUrls = {
+window.platformUrls = {
         'Afinia': 'https://auth.safetyculture.com/login?state=hKFo2SBqWHdOZUdxQ3NEWi1GYW5oZlBCV054NHdzRWJuaUVLa6FupWxvZ2luo3RpZNkgYjUweElWcmFPZUw0bEhLLTRQRWMtaDZJWHNNQU5EQ0ujY2lk2SBpVGh3ZWRFaVZXMGdkcVc2czZ3d2ZJeXVPQVJWeXNQSQ&client=iThwedEiVW0gdqW6s6wwfIyuOARVysPI&protocol=oauth2&iss=https%3A%2F%2Fauth.safetyculture.com%2F&nonce=WiGDDdSzKi7-RYez&redirect_uri=https%3A%2F%2Fapp.safetyculture.com%2Fauth-callback&response_type=code&sc_state=eyJ0b2tlbiI6IjQ1Y2I1YmQ2LTk3OTYtNDA4MC04ZDFmLTE0NGE0ZDE4NjM5OCIsImNsaWVudElEIjoiaVRod2VkRWlWVzBnZHFXNnM2d3dmSXl1T0FSVnlzUEkiLCJkZXN0aW5hdGlvblVSSSI6Ii8iLCJxdWVyeSI6Ij9pc3M9aHR0cHMlM0ElMkYlMkZhdXRoLnNhZmV0eWN1bHR1cmUuY29tJTJGIiwidGltZUlzc3VlZCI6IjIwMjYtMDgtMzFUMTQ6MjY6MTQuMTMwMzc5NDE5WiJ9&scope=openid%20profile%20email&version=2',
         'AM': 'http://10.0.61.40:8080/AM4G/src/Home/login.html',
         'Biofile': 'https://biofile.com/login',
@@ -20,51 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
         'Verdad Única': 'https://verdadunica.ghtcorp.com/#/',
         'WebFlowers MO': 'https://webflowersmo.azurewebsites.net/(S(showgyq1r3p1e2ecoa2mgjkx))/Default_new.aspx',
         'Wiga': 'https://wiga.io/login'
-    };
-
-    document.querySelectorAll('.platform-card').forEach((card) => {
-        const title = card.querySelector('.platform-info h3')?.textContent.trim();
-        const url = title ? platformUrls[title] : null;
-
-        if (!url) return;
-
-        const openPlatform = (event) => {
-            event.preventDefault();
-            window.location.href = url;
-        };
-
-        card.setAttribute('role', 'button');
-        card.setAttribute('tabindex', '0');
-        card.setAttribute('aria-label', `Abrir ${title}`);
-        card.addEventListener('click', openPlatform);
-        card.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                openPlatform(event);
-            }
-        });
-    });
-
-    let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const autoSlideInterval = 5000;
-
-    window.changeSlide = function(index) {
-        if (!slides.length || !dots.length) return;
-
-        slides[currentSlideIndex].classList.remove('active');
-        dots[currentSlideIndex].classList.remove('active');
-
-        currentSlideIndex = index;
-
-        slides[currentSlideIndex].classList.add('active');
-        dots[currentSlideIndex].classList.add('active');
-    };
-
-    if (slides.length > 0) {
-        setInterval(() => {
-            let nextSlideIndex = (currentSlideIndex + 1) % slides.length;
-            window.changeSlide(nextSlideIndex);
-        }, autoSlideInterval);
-    }
-});
+};

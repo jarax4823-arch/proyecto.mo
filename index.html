@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mountain Roses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -16,30 +19,33 @@
                 <i data-lucide="rose"></i>
             </div>
             <span>Mountain Roses</span>
+            <button class="sidebar-toggle" aria-label="Abrir navegación" aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
 
         <nav class="navigation">
-            <a href="#" class="nav-item active">
+            <a href="index.html" class="nav-item active">
                 <i data-lucide="house" class="nav-icon"></i>
                 <span>Inicio</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="pages/plataformas.html" class="nav-item">
                 <i data-lucide="layout-grid" class="nav-icon"></i>
                 <span>Plataformas</span> 
             </a>
-            <a href="#" class="nav-item">
+            <a href="pages/herramientas.html" class="nav-item">
                 <i data-lucide="wrench" class="nav-icon"></i>
                 <span>Herramientas</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="pages/informes.html" class="nav-item">
                 <i data-lucide="file-text" class="nav-icon"></i>
                 <span>Informes</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="pages/documentacion.html" class="nav-item">
                 <i data-lucide="book-open" class="nav-icon"></i>
                 <span>Documentación</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="pages/soporte.html" class="nav-item">
                 <i data-lucide="circle-help" class="nav-icon"></i>
                 <span>Soporte</span>
             </a>
@@ -195,13 +201,13 @@
             <div class="section-header">
                 <h2 class="section-title">Plataformas Empresariales</h2>
                 <div class="filter-tabs"> 
-                    <button class="tab-btn active">Todas</button>
-                    <button class="tab-btn">Administración</button>
-                    <button class="tab-btn">Cultivo</button>
-                    <button class="tab-btn">Operaciones</button>
-                    <button class="tab-btn">Tecnología</button>
+                    <button class="tab-btn active" data-filter="Todas">Todas</button>
+                    <button class="tab-btn" data-filter="Administración">Administración</button>
+                    <button class="tab-btn" data-filter="Cultivo">Cultivo</button>
+                    <button class="tab-btn" data-filter="Operaciones">Operaciones</button>
+                    <button class="tab-btn" data-filter="Tecnología">Tecnología</button>
                 </div>
-                <a href="#" class="see-all">Ver todas <i data-lucide="chevron-right"></i></a>
+                <a href="pages/plataformas.html" class="see-all">Ver todas <i data-lucide="chevron-right"></i></a>
             </div>
 
             <div class="platforms-grid">
@@ -387,15 +393,52 @@
                         <p>Cultivo</p>
                     </div>
                 </div>
+
+                <div class="platform-card" data-category="Operaciones">
+                    <div class="platform-logo">
+                        <i data-lucide="clipboard-list"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h3>WorkManager</h3>
+                        <p>Gestión</p>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <section class="section-container" id="informes">
+            <h2 class="section-title">Informes</h2>
+            <div class="reports-grid">
+                <a class="report-card" href="pages/informes.html">
+                    <div class="card-icon"><i data-lucide="chart-no-axes-combined"></i></div>
+                    <div class="card-info">
+                        <h3>Informes de Rendimientos</h3>
+                        <p>Reportes y análisis de rendimientos</p>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="arrow-icon"></i>
+                </a>
+                <a class="report-card" href="pages/informes.html">
+                    <div class="card-icon"><i data-lucide="file-chart-column"></i></div>
+                    <div class="card-info">
+                        <h3>Informes Internos</h3>
+                        <p>Documentación y reportes internos</p>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="arrow-icon"></i>
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>© 2024 Mountain Roses S.A.S. Todos los derechos reservados.</span>
+            <div class="footer-links">
+                <a href="#">Política de privacidad</a>
+                <a href="#">Términos de uso</a>
+            </div>
+        </footer>
+
     </main>
 
-    <script src="js/main.js"></script>
-    <script>
-      // Inicializar los íconos
-      lucide.createIcons();
-    </script>
+        <script src="js/main.js"></script>
+        <script src="js/dashboard.js"></script>
 </body>
 </html>

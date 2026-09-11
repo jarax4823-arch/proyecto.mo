@@ -1,0 +1,21 @@
+window.platformCatalog = [
+    { name: 'Afinia', category: 'Administración', description: 'Administración', image: 'afinia.png' },
+    { name: 'AM', category: 'Operaciones', description: 'Mantenimiento', image: 'AM.png' },
+    { name: 'Biofile', category: 'Administración', description: 'Administración', image: 'Biofile.png' },
+    { name: 'Contratos GHT', category: 'Administración', description: 'Gestión', image: 'Contratos GHT.png' },
+    { name: 'iAuditor', category: 'Operaciones', description: 'Operaciones', image: 'iAuditor.png' },
+    { name: 'Kissflow', category: 'Tecnología', description: 'Tecnología', image: 'kissflow.png' },
+    { name: 'Logística de Entrega', category: 'Operaciones', description: 'Operaciones', image: 'logistica.png' },
+    { name: 'Looker Studio', category: 'Tecnología', description: 'Tecnología', image: 'Looker Studio.png' },
+    { name: 'Mantis Bug Tracker', category: 'Tecnología', description: 'Tecnología', image: 'Mantis.png' },
+    { name: 'Portal de ABI', category: 'Administración', description: 'Administración', image: 'Portal de ABI.png' },
+    { name: 'Portal SD', category: 'Administración', description: 'Administración', image: 'Portal SD.png' },
+    { name: 'Prophix', category: 'Administración', description: 'Administración', image: 'Prophix.png' },
+    { name: 'SAG Web', category: 'Administración', description: 'Administración', image: 'SAG Web.png' },
+    { name: 'SharePoint MO', category: 'Tecnología', description: 'Tecnología', image: 'SharePoint.png' },
+    { name: 'SOT', category: 'Operaciones', description: 'Mantenimiento', image: 'SOT.png' },
+    { name: 'Verdad Única', category: 'Cultivo', description: 'Cultivo', image: 'Verdad Única.png' },
+    { name: 'WebFlowers MO', category: 'Cultivo', description: 'Cultivo', image: 'WebFlowers MO.png' },
+    { name: 'Wiga', category: 'Cultivo', description: 'Cultivo', image: 'Wiga.png' },
+    { name: 'WorkManager', category: 'Operaciones', description: 'Gestión', icon: 'clipboard-list' }
+];
