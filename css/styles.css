@@ -435,6 +435,7 @@ body:has(.sidebar-collapsed) .content {
     align-items: center;
     background-position: center;
     background-size: cover;
+    background-color: var(--forest);
     display: flex;
     left: 0;
     opacity: 0;

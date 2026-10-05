@@ -114,9 +114,9 @@
                         <dl class="contact-list">
                             <div><dt>Empresa</dt><dd>Mountain Roses S.A.S.</dd></div>
                             <div><dt>Correo</dt><dd><a href="mailto:mountainroses@mountainroses.com">mountainroses@mountainroses.com</a></dd></div>
-                            <div><dt>Correo alternativo</dt><dd><a href="mailto:alejandro.gonzalez@floreslasacacias.com">alejandro.gonzalez@floreslasacacias.com</a></dd></div>
-                            <div><dt>Celular</dt><dd><a href="tel:+573104601688">(+57) 310 460 1688</a></dd></div>
-                            <div><dt>Celular secundario</dt><dd><a href="tel:+573197745153">(+57) 319 774 5153</a></dd></div>
+                            <div><dt>Correo alternativo</dt><dd><a href="mailto:jhon.bolivar@floreslasacacias.com">jhon.bolivar@floreslasacacias.com</a></dd></div>
+                            <div><dt>Celular</dt><dd><a href="tel:+3046678157">(+57) 304 667 8157</a></dd></div>
+                            <div><dt>Celular secundario</dt><dd><a href="tel:+573204626553">(+57) 320 462 6553</a></dd></div>
                             <div class="contact-address"><dt><i data-lucide="map-pin"></i> Dirección</dt><dd>Km 1 Vía Madrid - Puente Piedra</dd></div>
                         </dl>
                     </section>
