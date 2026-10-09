@@ -1,4 +1,6 @@
 (() => {
+    let heroCarouselInterval;
+
     const initializeIcons = () => lucide.createIcons();
 
     const setupPlatformLinks = () => {
@@ -10,7 +12,7 @@
 
             const openPlatform = (event) => {
                 event.preventDefault();
-                window.location.href = url;
+                window.open(url, '_blank', 'noopener,noreferrer');
             };
 
             card.setAttribute('role', 'button');
@@ -26,7 +28,6 @@
     const setupPlatformFilters = () => {
         const platformCards = [...document.querySelectorAll('.platform-card')];
         const filterTabs = [...document.querySelectorAll('.tab-btn')];
-        const categoryButtons = [...document.querySelectorAll('.category-item')];
         const searchInput = document.querySelector('.search-bar input');
 
         const filterPlatforms = (filter) => {
@@ -39,24 +40,16 @@
         };
 
         filterTabs.forEach((tab) => {
-            tab.addEventListener('click', () => {
+            tab.onclick = () => {
                 filterTabs.forEach((item) => item.classList.remove('active'));
                 tab.classList.add('active');
                 filterPlatforms(tab.dataset.filter);
-            });
+            };
         });
-
-        categoryButtons.forEach((button) => {
-            button.addEventListener('click', () => {
-                const label = button.querySelector('span')?.textContent.trim();
-                filterTabs.find((tab) => tab.dataset.filter === label)?.click();
-            });
-        });
-
-        searchInput?.addEventListener('input', () => {
+        if (searchInput) searchInput.oninput = () => {
             const activeFilter = document.querySelector('.tab-btn.active')?.dataset.filter || 'Todas';
             filterPlatforms(activeFilter);
-        });
+        };
     };
 
     const setupSidebar = () => {
@@ -73,6 +66,7 @@
     };
 
     const setupHeroCarousel = () => {
+        window.clearInterval(heroCarouselInterval);
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
@@ -87,17 +81,23 @@
         };
 
         if (slides.length > 0) {
-            window.setInterval(() => {
+            heroCarouselInterval = window.setInterval(() => {
                 window.changeSlide((currentSlideIndex + 1) % slides.length);
             }, 5000);
         }
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
+    window.initializeDashboardView = () => {
         initializeIcons();
         setupPlatformLinks();
         setupPlatformFilters();
-        setupSidebar();
         setupHeroCarousel();
+    };
+
+    window.destroyDashboardView = () => window.clearInterval(heroCarouselInterval);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        window.initializeDashboardView();
+        setupSidebar();
     });
 })();

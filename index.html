@@ -25,27 +25,27 @@
         </div>
 
         <nav class="navigation">
-            <a href="index.html" class="nav-item active">
+            <a href="#home" class="nav-item active">
                 <i data-lucide="house" class="nav-icon"></i>
                 <span>Inicio</span>
             </a>
-            <a href="pages/plataformas.html" class="nav-item">
+            <a href="#platforms" class="nav-item">
                 <i data-lucide="layout-grid" class="nav-icon"></i>
                 <span>Plataformas</span> 
             </a>
-            <a href="pages/herramientas.html" class="nav-item">
+            <a href="#tools" class="nav-item">
                 <i data-lucide="wrench" class="nav-icon"></i>
                 <span>Herramientas</span>
             </a>
-            <a href="pages/informes.html" class="nav-item">
+            <a href="#reports" class="nav-item">
                 <i data-lucide="file-text" class="nav-icon"></i>
                 <span>Informes</span>
             </a>
-            <a href="pages/documentacion.html" class="nav-item">
+            <a href="#documentation" class="nav-item">
                 <i data-lucide="book-open" class="nav-icon"></i>
                 <span>Documentación</span>
             </a>
-            <a href="pages/soporte.html" class="nav-item">
+            <a href="#support" class="nav-item">
                 <i data-lucide="circle-help" class="nav-icon"></i>
                 <span>Soporte</span>
             </a>
@@ -116,6 +116,7 @@
             </div>
         </header>
 
+        <div id="page-view" aria-live="polite">
         <!-- 1. BANNER PRINCIPAL (CARROUSEL) -->
         <section class="hero-banner">
             <div class="slides-container">
@@ -456,6 +457,8 @@
             </div>
         </section>
 
+        </div>
+
         <footer class="footer">
             <span>© 2024 Mountain Roses S.A.S. Todos los derechos reservados.</span>
             <div class="footer-links">
@@ -467,6 +470,9 @@
     </main>
 
         <script src="js/main.js"></script>
+        <script src="js/platforms-data.js"></script>
+        <script src="js/platforms-page.js"></script>
         <script src="js/dashboard.js"></script>
+        <script src="js/spa-router.js"></script>
 </body>
 </html>

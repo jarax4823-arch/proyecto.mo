@@ -1027,6 +1027,28 @@ body:has(.sidebar-collapsed) .content {
 
 /* Module pages */
 
+.spa-view-enter {
+    animation: spa-view-enter 0.22s ease both;
+}
+
+@keyframes spa-view-enter {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spa-view-enter {
+        animation: none;
+    }
+}
+
 .module-page {
     margin-top: 16px;
 }
